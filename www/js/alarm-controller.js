@@ -1,1 +1,1 @@
-HealthCare.controller('alarm-controller',[])
+HealthCare.controller('alarm-controller', [])

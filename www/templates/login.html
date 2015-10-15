@@ -1,4 +1,4 @@
-<ion-view view-title="Login">
+<ion-view view-title="login" ng-controller="login-controller">
 	<ion-content>
 		<ion-header-bar class="bar-balanced">Giriş</ion-header-bar>
 		<div>
@@ -6,11 +6,11 @@
 		</div>
 		<div>
 			<form>
-				<input type="text" ng-model="user.tcknid" placeholder="TC Kimlik No">
+				<input type="text" ng-model="ssn" placeholder="TC Kimlik No">
 				<br>
-				<input type="password" ng-model="user.password" placeholder="Şifre">
+				<input type="password" ng-model="password" placeholder="Şifre">
 				<br>
-				<button class="button button-bar button-balanced" ng-click="login(user.tcknid,user.password)">Giriş</button>
+				<button class="button button-bar button-balanced" ng-click="login(ssn,password)">Giriş</button>
 			</form>
 		</div>
 	</ion-content>

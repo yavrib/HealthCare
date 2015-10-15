@@ -5,15 +5,81 @@
 // the 2nd parameter is an array of 'requires'
 var HealthCare = angular.module('starter', ['ionic'])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
+HealthCare.controller('HealthCare-controller', function ($scope, $state, $ionicPopup, AuthService) {
+
+
+
+  //  $scope.$on(AUTH_EVENTS.notAuthenticated, function (event) {
+  //    AuthService.logout();
+  //    $state.go('login');
+  //    var alertPopup = $ionicPopup.alert({
+  //      title: 'Connection Lost!',
+  //      template: 'Sorry, You have to login again.'
+  //    });
+  //  });
+
+  $scope.logout = function () {
+    AuthService.Authentication = 'false';
+    $state.go('login');
+
+  };
+
+  HealthCare.run(function ($ionicPlatform, $state, AuthService) {
+    $ionicPlatform.ready(function () {
+      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+      // for form inputs)
+      if (window.cordova && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      }
+      if (window.StatusBar) {
+        StatusBar.styleDefault();
+      }
+
+      if (!AuthService.isAuthenticated()) {
+        event.preventDefault();
+        $state.go('login', { reload: true });
+      }
+    });
   });
-})
+});
+HealthCare.config(function ($stateProvider, $urlRouterProvider) {
+  $stateProvider
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'login-controller'
+
+    })
+    .state('doctor', {
+      url: '/doctor',
+      templateUrl: 'templates/doctor.html',
+      controller: 'doctor-controller'
+    })
+    .state('medicine', {
+      url: '/medicine',
+      templateUrl: 'templates/medicine.html',
+      controller: 'medicine-controller'
+    })
+    .state('patient', {
+      url: '/patient',
+      templateUrl: 'templates/patient.html',
+      controller: 'patient-controller'
+    })
+    .state('patients', {
+      url: '/patients',
+      templateUrl: '/templates/patients.html',
+      controller: 'patients-controller'
+    })
+    .state('user', {
+      url: '/user',
+      templateUrl: 'templates/user.html',
+      controller: 'user-controller'
+    })
+    .state('alarm', {
+      url: '/alarm',
+      templateUrl: 'templates/alarm.html',
+      controller: 'alarm-controller'
+    })
+  $urlRouterProvider.otherwise('/login');
+});
+
