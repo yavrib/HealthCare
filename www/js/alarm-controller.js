@@ -1,0 +1,1 @@
+HealthCare.controller('alarm-controller',[])

@@ -1,0 +1,25 @@
+<ion-view view-title="Doctor">
+	<ion-content>
+		<ion-header-bar class="bar-balanced">Doktor</ion-header-bar>
+		<div class="item item-image">
+			<img ng-src=""/>	
+		</div>
+		<div>
+			<p>İsim:</p> {{doctor.name}}<br>
+			<p>Soyisim:</p>{{doctor.surname}}<br>
+			<p>Uzmanlık Alanı:</p>{{doctor.expertise}}<br>
+			<p>Çalışma Saatleri:</p>{{doctor.workSchedule}}<br>
+			<p>Telefon:</p>{{doctor.phoneNumber}}<br>
+		</div>
+		<div ng-show="true">
+			<button class="button button-bar button-balanced" href="tel:{{doctor.phoneNumber}}">Doktoru Ara</button>
+			<!--
+				cordova plugin add org.apache.cordova.inappbrowser  eklenirse js tarafında aşağıdaki de kullanılabilir. 
+				
+				$scope.dialNumber = function(number) {
+				  window.open('tel:' + number, '_system');
+				}
+			-->
+		</div>
+	</ion-content>
+</ion-view>

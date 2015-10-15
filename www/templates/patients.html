@@ -1,0 +1,9 @@
+<ion-view view-title="Patients">
+	<ion-content>
+		<ion-header-bar class="bar-balanced">Hastalar</ion-header-bar>
+		<div ng-repeat="users in user" class="item item-text-wrap">
+			<p>Hasta Adı: </p><a href="">{{users.name}}</a><br>
+			<p>Hasta Durumu: </p>{{users.status}}<br>
+		</div>
+	</ion-content>
+</ion-view>
