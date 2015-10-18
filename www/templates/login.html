@@ -1,14 +1,17 @@
 <ion-view view-title="login" ng-controller="login-controller">
 	<ion-content>
-		<ion-header-bar class="bar-balanced">Giriş</ion-header-bar>
+		<div>
+			<ion-header-bar class="bar-balanced">Giriş</ion-header-bar>
+		</div>
+		</br></br>
 		<div>
 			<img ng-src="" />
 		</div>
 		<div>
 			<form>
-				<input type="text" ng-model="ssn" placeholder="TC Kimlik No">
+				<input type="text" ng-model="ssn" placeholder=" TC Kimlik No">
 				<br>
-				<input type="password" ng-model="password" placeholder="Şifre">
+				<input type="password" ng-model="password" placeholder=" Şifre">
 				<br>
 				<button class="button button-bar button-balanced" ng-click="login(ssn,password)">Giriş</button>
 			</form>

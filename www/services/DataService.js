@@ -1,98 +1,98 @@
 HealthCare.service('DataService', function ($q, $http, $state, AuthService) {
-
-	function getUser(ssn) {
+	this.getUser = function getUser(ssn) {
 		var deferred = $q.defer();
 		var url = '';
 		var req = {
 			method: 'GET',
 			url: url
 		};
-		var data;
 		$http.defaults.headers.common.Authorization = AuthService.ssn + ':' + AuthService.password;
 		$http(req).success(function (userData) {
-			var total = data.user.length;
+			var total = userData.length;
 			if (total == 0) {
 				alert('No Data Found');
 			}
-			deferred.resolve(data);
+			deferred.resolve(userData);
 		});
+		return deferred.promise;
 	}
 
-	function getDoctor(ssn) {
+	this.getDoctor = function getDoctor(ssn) {
 		var deferred = $q.defer();
 		var url = '';
 		var req = {
 			method: 'GET',
 			url: url
 		};
-		var data;
 		$http.defaults.headers.common.Authorization = AuthService.ssn + ':' + AuthService.password;
-		$http(req).success(function (userData) {
-			var total = data.user.length;
+		$http(req).success(function (doctorData) {
+			var total = doctorData.length;
 			if (total == 0) {
 				alert('No Data Found');
 			}
-			deferred.resolve(data);
+			deferred.resolve(doctorData);
 		});
+		return deferred.promise;
 	}
 
-	function getPatient(ssn) {
+	this.getPatient = function getPatient(ssn) {
 		var deferred = $q.defer();
 		var url = '';
 		var req = {
 			method: 'GET',
 			url: url
 		};
-		var data;
 		$http.defaults.headers.common.Authorization = AuthService.ssn + ':' + AuthService.password;
-		$http(req).success(function (userData) {
-			var total = data.user.length;
+		$http(req).success(function (patientData) {
+			var total = patientData.length;
 			if (total == 0) {
 				alert('No Data Found');
 			}
-			deferred.resolve(data);
+			deferred.resolve(patientData);
 		});
+		return deferred.promise;
 	}
 
-	function getPatients(ssn) {
+	this.getPatients = function getPatients(ssn) {
 		var deferred = $q.defer();
 		var url = '';
 		var req = {
 			method: 'GET',
 			url: url
 		};
-		var data = [];
 		var i;
 		$http.defaults.headers.common.Authorization = AuthService.ssn + ':' + AuthService.password;
-		$http(req).success(function (userData) {
-			var total = data.user.length;
+		$http(req).success(function (patientsData) {
+			var total = patientsData.length;
 			if (total == 0) {
 				alert('No Data Found');
 			}
-			for (i = 0; i < data.length; i++) {
-				deferred.resolve(data[i]);
+			for (i = 0; i < patientsData.length; i++) {
+				deferred.resolve(patientsData[i]);
 			}
 		});
+		return deferred.promise;
+
 	}
 
-	function getMedicine(ssn) {
+	this.getMedicine = function getMedicine(ssn) {
 		var deferred = $q.defer();
 		var url = '';
 		var req = {
 			method: 'GET',
 			url: url
 		};
-		var data = [];
 		var i;
 		$http.defaults.headers.common.Authorization = AuthService.ssn + ':' + AuthService.password;
-		$http(req).success(function (userData) {
-			var total = data.user.length;
+		$http(req).success(function (medicineData) {
+			var total = medicineData.length;
 			if (total == 0) {
 				alert('No Data Found');
 			}
-			for (i = 0; i < data.length; i++) {
-				deferred.resolve(data[i]);
+			for (i = 0; i < medicineData.length; i++) {
+				deferred.resolve(medicineData[i]);
 			}
 		});
+		return deferred.promise;
 	}
 });

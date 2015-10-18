@@ -44,6 +44,13 @@ HealthCare.controller('HealthCare-controller', function ($scope, $state, $ionicP
 });
 HealthCare.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
+
+    .state('menu', {
+      url: '/menu',
+      abstract: true,
+      templateUrl: 'templates/menu.html',
+      controller: 'app.js'
+    })
     .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
@@ -52,23 +59,23 @@ HealthCare.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('doctor', {
       url: '/doctor',
-      templateUrl: 'templates/doctor.html',
-      controller: 'doctor-controller'
+          templateUrl: 'templates/doctor.html',
+          controller: 'doctor-controller'
     })
     .state('medicine', {
       url: '/medicine',
-      templateUrl: 'templates/medicine.html',
-      controller: 'medicine-controller'
+          templateUrl: 'templates/medicine.html',
+          controller: 'medicine-controller'
     })
     .state('patient', {
       url: '/patient',
-      templateUrl: 'templates/patient.html',
-      controller: 'patient-controller'
+          templateUrl: 'templates/patient.html',
+          controller: 'patient-controller'
     })
     .state('patients', {
       url: '/patients',
-      templateUrl: '/templates/patients.html',
-      controller: 'patients-controller'
+          templateUrl: '/templates/patients.html',
+          controller: 'patients-controller'
     })
     .state('user', {
       url: '/user',
@@ -77,8 +84,8 @@ HealthCare.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('alarm', {
       url: '/alarm',
-      templateUrl: 'templates/alarm.html',
-      controller: 'alarm-controller'
+          templateUrl: 'templates/alarm.html',
+          controller: 'alarm-controller'
     })
   $urlRouterProvider.otherwise('/login');
 });
