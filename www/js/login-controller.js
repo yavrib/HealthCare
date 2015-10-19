@@ -11,7 +11,7 @@ HealthCare.controller('login-controller', function ($scope, $timeout, $state, $i
 		AuthService.login(ssn, password);
 		alert(AuthService.isAuthenticated)
 		if (AuthService.isAuthenticated) {
-			$state.go('user', { directLogin: 'N' }, { reload: true });
+			$state.go('menu.user', { directLogin: 'N' }, { reload: true });
 			$timeout(function () {
 				$ionicLoading.hide();
 			}, 500);
