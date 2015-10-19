@@ -1,17 +1,19 @@
 <ion-view view-title="patient" ng-controller="patient-controller">
 	<ion-content>
-		<ion-header-bar class="bar-balanced">{{user.ssn}}</ion-header-bar>
+		<ion-header-bar class="bar-balanced">
+			<p class="headerClass">{{user.ssn}}</p>
+		</ion-header-bar>
 		<div class="item item-image">
 			<img ng-src="" />
 		</div>
 		<div>
-			<p>İsim:</p> {{user.name}}
+			<p class="modelDataClass">İsim:</p><p class="modelDataClass">{{user.name}}</p>
 			<br>
-			<p>Soyisim:</p>{{user.surname}}
+			<p class="modelDataClass">Soyisim:</p><p class="modelDataClass">{{user.surname}}</p>
 			<br>
-			<p>Doğum Yeri:</p>{{user.birthPlace}}
+			<p class="modelDataClass">Doğum Yeri:</p><p class="modelDataClass">{{user.birthPlace}}</p>
 			<br>
-			<p>Doğum Tarihi:</p>{{user.birthDate}}
+			<p class="modelDataClass">Doğum Tarihi:</p><p class="modelDataClass">{{user.birthDate}}</p>
 			<br>
 		</div>
 	</ion-content>

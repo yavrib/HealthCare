@@ -1,4 +1,5 @@
 HealthCare.controller('login-controller', function ($scope, $timeout, $state, $ionicPopup, AuthService, $ionicLoading) {
+	//prod
 	$scope.login = function (ssn, password) {
 		$ionicLoading.show({
 			content: 'Loading',
@@ -25,7 +26,9 @@ HealthCare.controller('login-controller', function ($scope, $timeout, $state, $i
 			});
 		};
 	};
-	/*$scope.login = function (ssn, password) {
+	/*
+	//test
+	$scope.login = function (ssn, password) {
 		$ionicLoading.show({
 			content: 'Loading',
 			animation: 'fade-in',

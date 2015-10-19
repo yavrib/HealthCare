@@ -1,15 +1,17 @@
 <ion-view view-title="user" ng-controller="user-controller">
 	<ion-content>
-		<ion-header-bar class="bar-balanced">Kullanıcı</ion-header-bar>
+		<ion-header-bar class="bar-balanced">
+			<p class="headerClass">Kullanıcı</p>
+		</ion-header-bar>
 		<div class="item item-image">
 			<img ng-src=""/>	
 		</div>
 		<div>
-			<p>Sosyal Güvenlik Numarası:</p>{{user.ssn}}<br>
-			<p>İsim:</p> {{user.name}}<br>
-			<p>Soyisim:</p>{{user.surname}}<br>
-			<p>Doğum Yeri:</p>{{user.birthPlace}}<br>
-			<p>Doğum Tarihi:</p>{{user.birthDate}}<br>
+			<p class="modelDataClass">Sosyal Güvenlik Numarası:</p><p class="modelDataClass">{{user.ssn}}</p><br>
+			<p class="modelDataClass">İsim:</p><p class="modelDataClass">{{user.name}}</p><br>
+			<p class="modelDataClass">Soyisim:</p><p class="modelDataClass">{{user.surname}}</p><br>
+			<p class="modelDataClass">Doğum Yeri:</p><p class="modelDataClass">{{user.birthPlace}}</p><br>
+			<p class="modelDataClass">Doğum Tarihi:</p><p class="modelDataClass">{{user.birthDate}}</p><br>
 		</div>
 	</ion-content>
 </ion-view>

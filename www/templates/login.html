@@ -1,7 +1,9 @@
 <ion-view view-title="login" ng-controller="login-controller">
 	<ion-content>
 		<div>
-			<ion-header-bar class="bar-balanced">Giriş</ion-header-bar>
+			<ion-header-bar class="bar-balanced">
+				<p class="headerClass">Giriş</p>
+			</ion-header-bar>
 		</div>
 		</br></br>
 		<div>
@@ -13,7 +15,7 @@
 				<br>
 				<input type="password" ng-model="password" placeholder=" Şifre">
 				<br>
-				<button class="button button-bar button-balanced" ng-click="login(ssn,password)">Giriş</button>
+				<button class="button button-balanced loginButton" ng-click="login(ssn,password)"><p class="buttonClass">Giriş</p></button>
 			</form>
 		</div>
 	</ion-content>

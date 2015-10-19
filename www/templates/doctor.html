@@ -1,18 +1,20 @@
 <ion-view view-title="doctor" ng-controller="doctor-controller">
 	<ion-content>
-		<ion-header-bar class="bar-balanced">Doktor</ion-header-bar>
+		<ion-header-bar class="bar-balanced">
+			<p class="headerClass">Doktor</p>
+		</ion-header-bar>
 		<div class="item item-image">
 			<img ng-src=""/>	
 		</div>
 		<div>
-			<p>İsim:</p> {{doctor.name}}<br>
-			<p>Soyisim:</p>{{doctor.surname}}<br>
-			<p>Uzmanlık Alanı:</p>{{doctor.expertise}}<br>
-			<p>Çalışma Saatleri:</p>{{doctor.workSchedule}}<br>
-			<p>Telefon:</p>{{doctor.phoneNumber}}<br>
+			<p class="modelDataClass">İsim:</p><p class="modelDataClass">{{doctor.name}}</p><br>
+			<p class="modelDataClass">Soyisim:</p><p class="modelDataClass">{{doctor.surname}}</p><br>
+			<p class="modelDataClass">Uzmanlık Alanı:</p><p class="modelDataClass">{{doctor.expertise}}</p><br>
+			<p class="modelDataClass">Çalışma Saatleri:</p><p class="modelDataClass">{{doctor.workSchedule}}</p><br>
+			<p class="modelDataClass">Telefon:</p><p class="modelDataClass">{{doctor.phoneNumber}}</p><br>
 		</div>
 		<div ng-show="true">
-			<button class="button button-bar button-balanced" href="tel:{{doctor.phoneNumber}}">Doktoru Ara</button>
+			<button class="button button-bar button-balanced" href="tel:{{doctor.phoneNumber}}"><p class="buttonClass">Doktoru Ara</p></button>
 			<!--
 				cordova plugin add org.apache.cordova.inappbrowser  eklenirse js tarafında aşağıdaki de kullanılabilir. 
 				

@@ -46,10 +46,10 @@ HealthCare.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
 
     .state('menu', {
-      url: '/menu',
+      cache: false,
+      url: '/',
       abstract: true,
-      templateUrl: 'templates/menu.html',
-      controller: 'app.js'
+      templateUrl: 'templates/menu.html'
     })
     .state('login', {
       url: '/login',
@@ -57,35 +57,59 @@ HealthCare.config(function ($stateProvider, $urlRouterProvider) {
       controller: 'login-controller'
 
     })
-    .state('doctor', {
-      url: '/doctor',
+    .state('menu.doctor', {
+      url: 'menu/doctor/:status',
+      views: {
+        'menuContent': {
           templateUrl: 'templates/doctor.html',
-          controller: 'doctor-controller'
+          //controller: 'doctor-controller'
+        }
+      }
     })
-    .state('medicine', {
-      url: '/medicine',
+    .state('menu.medicine', {
+      url: 'menu/medicine/:status',
+      views: {
+        'menuContent': {
           templateUrl: 'templates/medicine.html',
-          controller: 'medicine-controller'
+          //controller: 'medicine-controller'
+        }
+      }
     })
-    .state('patient', {
-      url: '/patient',
+    .state('menu.patient', {
+      url: 'menu/patient/:status',
+      views: {
+        'menuContent': {
           templateUrl: 'templates/patient.html',
-          controller: 'patient-controller'
+          //controller: 'patient-controller'
+        }
+      }
     })
-    .state('patients', {
-      url: '/patients',
+    .state('menu.patients', {
+      url: 'menu/patients/:status',
+      views: {
+        'menuContent': {
           templateUrl: '/templates/patients.html',
-          controller: 'patients-controller'
+          //controller: 'patients-controller'
+        }
+      }
     })
-    .state('user', {
-      url: '/user',
-      templateUrl: 'templates/user.html',
-      controller: 'user-controller'
+    .state('menu.user', {
+      url: 'menu/user/:directLogin',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/user.html',
+          //controller: 'user-controller'
+        }
+      }
     })
-    .state('alarm', {
-      url: '/alarm',
+    .state('menu.alarm', {
+      url: 'menu/alarm/:status',
+      views: {
+        'menuContent': {
           templateUrl: 'templates/alarm.html',
-          controller: 'alarm-controller'
+          //controller: 'alarm-controller'
+        }
+      }
     })
   $urlRouterProvider.otherwise('/login');
 });

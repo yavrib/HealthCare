@@ -1,6 +1,8 @@
 <ion-view view-title="medicine" ng-controller="medicine-controller">
 	<ion-content>
-		<ion-header-bar class="bar-balanced">İlaç Bilgileri</ion-header-bar>
+		<ion-header-bar class="bar-balanced">
+			<p class="headerClass">İlaç Bilgileri</p>
+		</ion-header-bar>
 		<div>
 			<label class="item item-input item-select">
 				<div class="input-label">
@@ -16,10 +18,10 @@
 		</div>
 		<div class="item item-avatar">
 			<img ng-src="medicine.avatar" />
-			<h2>İlaç Adı: {{medicine.name}}</h2>
+			<h2 class="modelDataClass">İlaç Adı: {{medicine.name}}</h2>
 		</div>
 		<div>
-			<p>Kullanım zamanı:</p>{{medicine.frequency}}
+			<p class="modelDataClass">Kullanım zamanı:</p>{{medicine.frequency}}
 			<br>
 		</div>
 	</ion-content>

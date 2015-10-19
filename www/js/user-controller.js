@@ -1,5 +1,5 @@
 HealthCare.controller('user-controller', function ($scope, DataService, $ionicLoading, $stateParams, AuthService) {
-
+    alert(AuthService.isAuthenticated);
     var user;
     $ionicLoading.show({
         content: 'Loading',
