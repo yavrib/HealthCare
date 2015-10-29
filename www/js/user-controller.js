@@ -1,5 +1,5 @@
-HealthCare.controller('user-controller', function ($scope, DataService, $ionicLoading, $stateParams, AuthService) {
-    alert(AuthService.isAuthenticated);
+HealthCare.controller('user-controller', function ($scope, $timeout, DataService, $ionicLoading, $stateParams, AuthService) {
+    //alert(AuthService.isAuthenticated);
     var user;
     $ionicLoading.show({
         content: 'Loading',
@@ -12,6 +12,9 @@ HealthCare.controller('user-controller', function ($scope, DataService, $ionicLo
     if (directLogin == 'Y') {
         AuthService.login($scope.ssn, $scope.password)
     }
+    $timeout(function () {
+				$ionicLoading.hide();
+			}, 500);
     DataService.getUser($scope.ssn).then(function (data) {
         user = data;
     });

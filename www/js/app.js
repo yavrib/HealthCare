@@ -58,59 +58,60 @@ HealthCare.config(function ($stateProvider, $urlRouterProvider) {
 
     })
     .state('menu.doctor', {
-      url: 'menu/doctor/:status',
+      url: 'menu/doctor',//:status',
       views: {
         'menuContent': {
           templateUrl: 'templates/doctor.html',
-          //controller: 'doctor-controller'
+          controller: 'doctor-controller'
         }
       }
     })
     .state('menu.medicine', {
-      url: 'menu/medicine/:status',
+      url: 'menu/medicine',//:status',
       views: {
         'menuContent': {
           templateUrl: 'templates/medicine.html',
-          //controller: 'medicine-controller'
+          controller: 'medicine-controller'
         }
       }
     })
     .state('menu.patient', {
-      url: 'menu/patient/:status',
+      url: 'menu/patient',//:status',
       views: {
         'menuContent': {
           templateUrl: 'templates/patient.html',
-          //controller: 'patient-controller'
+          controller: 'patient-controller'
         }
       }
     })
     .state('menu.patients', {
-      url: 'menu/patients/:status',
+      url: 'menu/patients',//:status',
       views: {
         'menuContent': {
           templateUrl: '/templates/patients.html',
-          //controller: 'patients-controller'
+          controller: 'patients-controller'
         }
       }
     })
     .state('menu.user', {
-      url: 'menu/user/:directLogin',
+      url: 'menu/user',//:directLogin',
       views: {
         'menuContent': {
           templateUrl: 'templates/user.html',
-          //controller: 'user-controller'
+          controller: 'user-controller'
         }
       }
     })
     .state('menu.alarm', {
-      url: 'menu/alarm/:status',
+      url: 'menu/alarm',//:status',
       views: {
         'menuContent': {
           templateUrl: 'templates/alarm.html',
-          //controller: 'alarm-controller'
+          controller: 'alarm-controller'
         }
       }
     })
-  $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('menu/user');
+  //$urlRouterProvider.otherwise('/login');
 });
 
