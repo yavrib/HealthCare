@@ -111,7 +111,7 @@ HealthCare.config(function ($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    $urlRouterProvider.otherwise('menu/user');
+    $urlRouterProvider.otherwise('menu/medicine');
   //$urlRouterProvider.otherwise('/login');
 });
 

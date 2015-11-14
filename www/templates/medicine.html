@@ -8,9 +8,9 @@
 				<div class="input-label">
 					İlaç
 				</div>
-				<select ng-model="user.medicine">
+				<select ng-model="medicine.name">
 					<option value="">İlaç seçiniz</option>
-					<option ng-repeat="medicine in user.medicine" value="{{medicine}}">
+					<option ng-repeat="medicine in medicine.name"><!-- value={{medicine}}-->
 						{{medicine}}
 					</option>
 				</select>
