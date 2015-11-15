@@ -1,5 +1,5 @@
-HealthCare.controller('patient-controller', function ($scope, DataService, $ionicLoading, $stateParams, AuthService) {
-
+HealthCare.controller('patient-controller', function ($scope, $state, $timeout, DataService, $ionicLoading, $stateParams, AuthService) {
+    var credentials = window.localStorage.getItem(credentials);
     var patient;
     $ionicLoading.show({
         content: 'Loading',
@@ -8,11 +8,19 @@ HealthCare.controller('patient-controller', function ($scope, DataService, $ioni
         maxWidth: 200,
         showDelay: 0
     });
-    var directLogin = $stateParams.directLogin;
+    /*var directLogin = $stateParams.directLogin;
     if (directLogin == 'Y') {
         AuthService.login($scope.ssn, $scope.password)
-    }
+    }*/
+    $timeout(function () {
+        $ionicLoading.hide();
+    }, 500);
     DataService.getPatient($scope.ssn).then(function (data) {
-        patient = data;
+        if (credentials != undefined) {
+            patient = data;
+        }
+        else {
+            $state.go('/login');
+        }
     });
 })

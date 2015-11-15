@@ -6,24 +6,6 @@
 var HealthCare = angular.module('starter', ['ionic'])
 
 HealthCare.controller('HealthCare-controller', function ($scope, $state, $ionicPopup, AuthService) {
-
-
-
-  //  $scope.$on(AUTH_EVENTS.notAuthenticated, function (event) {
-  //    AuthService.logout();
-  //    $state.go('login');
-  //    var alertPopup = $ionicPopup.alert({
-  //      title: 'Connection Lost!',
-  //      template: 'Sorry, You have to login again.'
-  //    });
-  //  });
-
-  $scope.logout = function () {
-    AuthService.Authentication = 'false';
-    $state.go('login');
-
-  };
-
   HealthCare.run(function ($ionicPlatform, $state, AuthService) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -111,7 +93,7 @@ HealthCare.config(function ($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    $urlRouterProvider.otherwise('menu/medicine');
+  $urlRouterProvider.otherwise('menu/user');
   //$urlRouterProvider.otherwise('/login');
 });
 

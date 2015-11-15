@@ -1,5 +1,5 @@
-HealthCare.controller('login-controller', function ($scope, $timeout, $state, $ionicPopup, AuthService, $ionicLoading) {
-	//prod
+HealthCare.controller('login-controller', function ($stateParams, $scope, $timeout, $state, $ionicPopup, AuthService, $ionicLoading) {
+	var credentials = window.localStorage.getItem(credentials);
 	$scope.login = function (ssn, password) {
 		$ionicLoading.show({
 			content: 'Loading',
@@ -9,9 +9,8 @@ HealthCare.controller('login-controller', function ($scope, $timeout, $state, $i
 			showDelay: 0
 		});
 		AuthService.login(ssn, password);
-		alert(AuthService.isAuthenticated)
-		if (AuthService.isAuthenticated) {
-			$state.go('menu.user', { directLogin: 'N' }, { reload: true });
+		if (credentials != undefined) {
+			$state.go('menu.user');
 			$timeout(function () {
 				$ionicLoading.hide();
 			}, 500);
@@ -26,7 +25,7 @@ HealthCare.controller('login-controller', function ($scope, $timeout, $state, $i
 			});
 		};
 	};
-	/*
+	/*/
 	//test
 	$scope.login = function (ssn, password) {
 		$ionicLoading.show({
@@ -42,5 +41,6 @@ HealthCare.controller('login-controller', function ($scope, $timeout, $state, $i
 
 			$ionicLoading.hide();
 		}, 5500);
-	}*/
+	}
+	//*/
 });

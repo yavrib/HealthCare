@@ -76,7 +76,7 @@ HealthCare.service('DataService', function ($q, $http, $state, AuthService) {
 	}
 
 	this.getMedicine = function getMedicine(ssn) {
-		/*var deferred = $q.defer();
+		var deferred = $q.defer();
 		var url = '';
 		var req = {
 			method: 'GET',
@@ -94,12 +94,6 @@ HealthCare.service('DataService', function ($q, $http, $state, AuthService) {
 			}
 		});
 		return deferred.promise;
-		*/
-		var medicine =
-		{"medicine":[
-			{"name": "Maxaljin","frequency":"1/24"},	
-			{"name": "Majezik","frequency":"1/24"}
-		]};
-		return medicine;
+		
 	}
 });

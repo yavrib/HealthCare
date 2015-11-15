@@ -1,20 +1,6 @@
-HealthCare.service('AuthService', function ($q, $http, $state) {
-	this.Authentication// = 'false'// = 'true';
-	this.isAuthenticated// = false// = true;
-	var role = '';
-
-	if (this.Authentication = 'true') {
-		this.isAuthenticated = true;
-	} else {
-		this.isAuthenticated = false;
-	}
-	//test
-	this.login = function login (ssn,password){
-		window.localStorage.setItem(this.Authentication, 'true')
-		this.isAuthenticated = true
-	}
-	/*
-	//prod
+HealthCare.service('AuthService', function ($scope, $q, $http, $state) {
+	var credentials = undefined;
+	var role;
 	this.login = function login(ssn, password) {
 		var params = { 'ssn': ssn, 'password': password };
 		$http({
@@ -22,13 +8,16 @@ HealthCare.service('AuthService', function ($q, $http, $state) {
 			url: '',
 			params: params
 		}).then(function successCallback(response,userRole) {
-			this.isAuthenticated = response;
-			window.localStorage.setItem(this.Authentication, 'true');
+			credentials = response;
+			window.localStorage.setItem(credentials);
 			role = userRole;
 		}, function errorCallback(response) {
-			this.isAuthenticated = response;
-			window.localStorage.removeItem(this.Authentication);
+
 		});
 	}
-	*/
+	this.logout = function logout() {
+		credentials = undefined;
+		window.localStorage.removeItem(credentials);
+	}
+	
 })

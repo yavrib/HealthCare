@@ -21,16 +21,16 @@
 					<ion-item menu-close href="#/menu/user">
 						Kullanıcı
 					</ion-item>
-					<ion-item menu-close href="#/menu/doctor">
+					<ion-item menu-close href="#/menu/doctor" ng-show="{{isPatient}}">
 						Doktor
 					</ion-item>
 					<ion-item menu-close href="#/menu/medicine">
 						İlaçlar
 					</ion-item>
-					<ion-item menu-close href="#/menu/patient">
+					<ion-item menu-close href="#/menu/patient" ng-show="{{isDoctor}}">
 						Hasta
 					</ion-item>
-					<ion-item menu-close href="#/menu/patients">
+					<ion-item menu-close href="#/menu/patients" ng-show="{{isDoctor}}">
 						Hastalar
 					</ion-item>
 				</ion-list>
